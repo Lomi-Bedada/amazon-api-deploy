@@ -3,12 +3,13 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 require("dotenv").config();
-const Stripe = require("stripe");
+// const Stripe = require("stripe");
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const app = express();
-app.use(cors({ origin: true }));
+// app.use(cors({ origin: true }));
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
